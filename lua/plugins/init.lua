@@ -1,0 +1,41 @@
+return {
+	{
+	  "vhyrro/luarocks.nvim",
+	  priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+	  config = true,
+	},
+	{
+	    'nvim-telescope/telescope.nvim', version = '*',
+	    dependencies = {
+		'nvim-lua/plenary.nvim',
+		-- optional but recommended
+		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+	    }
+	},
+	{ "ellisonleao/gruvbox.nvim", priority = 999 , config = true, opts = ...},
+	{
+	  'nvim-treesitter/nvim-treesitter',
+	  lazy = false,
+	  build = ':TSUpdate'
+	},
+	{
+	    "ThePrimeagen/harpoon",
+	    branch = "harpoon2",
+	    dependencies = { "nvim-lua/plenary.nvim" }
+	},
+	{'mbbill/undotree'},
+	{'tpope/vim-fugitive'},
+	{
+	  "ray-x/lsp_signature.nvim",
+	  event = "InsertEnter",
+	  opts = {
+		bind = true, -- Mandatory mapping to LSP server
+		handler_opts = {
+		  border = "rounded" -- Choose "single", "double", or "rounded"
+		},
+		hint_enable = true, -- Show virtual hint next to cursor
+		hint_prefix = "💡 ",
+	  },
+	}
+
+}

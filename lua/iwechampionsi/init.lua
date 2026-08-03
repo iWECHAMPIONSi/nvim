@@ -1,0 +1,5 @@
+require('iwechampionsi.remap')
+require('iwechampionsi.lsp')
+require('iwechampionsi.lazy')
+require('iwechampionsi.settings')
+require('iwechampionsi.comment')
