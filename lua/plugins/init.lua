@@ -36,6 +36,19 @@ return {
 		hint_enable = true, -- Show virtual hint next to cursor
 		hint_prefix = "💡 ",
 	  },
+	},
+	{
+	  "lopi-py/luau-lsp.nvim",
+	  opts = {},
+	  dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+	  'ShouxTech/rojo.nvim',
+	  opts = {},
+	},
+	{
+		"nvim-treesitter/playground",
+		cmd = "TSHighlightCapturesUnderCursor"
 	}
 
 }

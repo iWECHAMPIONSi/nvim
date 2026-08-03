@@ -1,9 +1,24 @@
 require('nvim-treesitter').setup {
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
-  install_dir = vim.fn.stdpath('data') .. '/site'
+	install_dir = vim.fn.stdpath('data') .. '/site',
+	ensure_installed = { 
+		'lua', 
+		'luau',
+		'python',
+		'c', 
+		'cpp',
+		'zig'
+	},
+	highlight = {
+		enable = true,
+	},
+
+	indent = {
+	enable = true,
+	}
 }
 
-require('nvim-treesitter').install {'lua', 'c', 'cpp', 'zig'}
+require('nvim-treesitter').install {'lua', 'luau', 'python', 'c', 'cpp', 'zig'}
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'c' },
@@ -22,5 +37,15 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'zig' },
+  callback = function() vim.treesitter.start() end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'luau' },
+  callback = function() vim.treesitter.start() end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'py' },
   callback = function() vim.treesitter.start() end,
 })

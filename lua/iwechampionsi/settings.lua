@@ -15,9 +15,35 @@ vim.diagnostic.config({
 vim.opt.autocomplete = true
 vim.opt.autocompletedelay = 0
 
-vim.lsp.completion.enable()
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
 
+        if not client then
+            return
+        end
+
+        if client.server_capabilities.semanticTokensProvider then
+            vim.lsp.semantic_tokens.enable(true, {
+                bufnr = args.buf,
+                client_id = client.id,
+            })
+		end
+    end
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "roblox",
+    callback = function()
+
+        vim.cmd([[
+            highlight @lsp.type.property guifg=#70a0ff
+            highlight @lsp.type.method guifg=#fae4aa
+        ]])
+
+    end
+})

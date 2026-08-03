@@ -1,0 +1,7 @@
+require("mason-lspconfig").setup {
+    automatic_installation = true,
+    -- Prevent mason-lspconfig from setting it up automatically
+    automatic_enable = { 
+        exclude = { "luau_lsp" } 
+    },
+}
