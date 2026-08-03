@@ -1,0 +1,6 @@
+*.*
+
+!*.lua
+!*.json
+!.gitignore
+
