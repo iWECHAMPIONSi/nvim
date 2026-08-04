@@ -1,7 +1,7 @@
 vim.lsp.enable('luals')
-vim.lsp.enable('clangd')
+vim.lsp.enable('clangd-cpp')
+vim.lsp.enable('clangd-c')
 vim.lsp.enable('basedpyright')
--- vim.lsp.enable('luau-lsp')
 vim.lsp.enable('zls')
 vim.lsp.enable('jsonls')
 vim.lsp.enable('cssls')
@@ -24,3 +24,4 @@ vim.lsp.config("luau-lsp", {
 		end
 	end,
 })
+

@@ -2,10 +2,10 @@ local colors = {
     fg = "#BCBEC8",
     bg = "#202227",
 
-    selection = "#13235D",
+    selection = "#0B5AAF",
     selection_fg = "#FFFFFF",
 
-    operator = "#BCBEC8",
+    operator = "#9772C2",
 
     number = "#F2BA2A",
     string = "#8EE9B6",
@@ -204,6 +204,7 @@ set(0, "@boolean", {
 
 set(0, "@constant.builtin", {
     fg = colors.number,
+	bold = true
 })
 
 set(0, "@keyword", {
@@ -262,7 +263,11 @@ set(0, "@type.builtin", {
 })
 
 set(0, "@variable.builtin", {
-    fg = colors.keyword,
+    fg = colors.property,
+})
+
+set(0, "@variable.member", {
+	fg = colors.variable
 })
 
 set(0, "@lsp.type.type", {

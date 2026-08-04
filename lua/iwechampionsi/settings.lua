@@ -12,9 +12,6 @@ vim.diagnostic.config({
 	severity_sort = true
 })
 
-vim.opt.autocomplete = true
-vim.opt.autocompletedelay = 0
-
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

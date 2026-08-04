@@ -14,9 +14,7 @@ return {
     'javascript',
     'javascriptreact',
     'typescript',
-    'typescriptreact',
-	'js',
-	'ts'
+    'typescriptreact'
   },
 
   root_dir = function(bufnr, on_dir)

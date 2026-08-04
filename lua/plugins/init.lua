@@ -49,6 +49,24 @@ return {
 	{
 		"nvim-treesitter/playground",
 		cmd = "TSHighlightCapturesUnderCursor"
+	},
+	{
+	  'saghen/blink.cmp',
+	  -- optional: provides snippets for the snippet source
+	  dependencies = { 'rafamadriz/friendly-snippets' },
+
+	  -- use a release tag to download pre-built binaries
+	  version = '1.*',
+	  -- AND/OR build from source
+	  -- build = 'cargo build --release',
+	  -- If you use nix, you can build from source with:
+	  -- build = 'nix run .#build-plugin',
+
+	  opts_extend = { "sources.default" }
+	},
+	{
+	  'stevearc/conform.nvim',
+	  opts = {},
 	}
 
 }
