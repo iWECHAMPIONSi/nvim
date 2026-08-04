@@ -3,4 +3,5 @@
 !*.lua
 !*.json
 !.gitignore
+!*.scm
 
