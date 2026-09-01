@@ -8,10 +8,11 @@ require("conform").setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		-- Conform will run the first available formatter
 		javascript = { "prettierd", "prettier", stop_after_first = true },
+		java = { "google-java-format -i" },
 		c = { "clang-format" },
 		cpp = { "clang-format" },
 		json = { "clang-format" },
-		zig = { "zig fmt" },
+		zig = { "zigfmt" },
 	},
 })
 vim.api.nvim_create_autocmd("BufWritePre", {

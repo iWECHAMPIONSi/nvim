@@ -75,4 +75,23 @@ return {
 	{
 		{ "CRAG666/code_runner.nvim", config = true },
 	},
+	{ "renerocksai/jar-sdk-browser.nvim" },
+	{
+		"alienman5k/jdecomp.nvim",
+		opts = {
+			decompiler = "fernflower", -- cfr, procyon, fernflower
+			provider = {
+				fernflower = {
+					jar = os.getenv("HOME") .. ".local/bin/fernflower/build/install/fernflower/lib/fernflower.jar",
+				},
+			},
+		},
+	},
+	{
+		"nvim-java/nvim-java",
+		config = function()
+			require("java").setup()
+			vim.lsp.enable("jdtls")
+		end,
+	},
 }

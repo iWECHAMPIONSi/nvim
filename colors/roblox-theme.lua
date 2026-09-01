@@ -44,18 +44,20 @@ vim.o.background = "dark"
 
 local set = vim.api.nvim_set_hl
 
+vim.api.nvim_set_hl(0, "@keyword.type.java", {
+	link = "@keyword",
+})
+
 set(0, "Normal", {
-	fg = colors.fg,
-	bg = colors.bg,
+	bg = "none",
 })
 
 set(0, "NormalFloat", {
-	fg = colors.fg,
-	bg = colors.bg,
+	bg = "none",
 })
 
 set(0, "CursorLine", {
-	bg = "#25272E",
+	bg = "none",
 })
 
 set(0, "Visual", {

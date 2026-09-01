@@ -7,6 +7,7 @@ require("nvim-treesitter").setup({
 		"python",
 		"c",
 		"cpp",
+		"java",
 		"zig",
 	},
 	highlight = {
@@ -18,7 +19,7 @@ require("nvim-treesitter").setup({
 	},
 })
 
-require("nvim-treesitter").install({ "lua", "luau", "python", "c", "cpp", "zig" })
+require("nvim-treesitter").install({ "lua", "java", "luau", "python", "c", "cpp", "zig" })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "c" },
@@ -50,6 +51,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "luau" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "java" },
 	callback = function()
 		vim.treesitter.start()
 	end,
