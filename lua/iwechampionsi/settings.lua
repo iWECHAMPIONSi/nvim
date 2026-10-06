@@ -10,7 +10,7 @@ vim.diagnostic.config({
 		spacing = 4,
 	},
 	signs = false,
-	update_in_insert = true,
+	update_in_insert = false,
 	severity_sort = true,
 })
 

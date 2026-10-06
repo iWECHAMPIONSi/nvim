@@ -10,6 +10,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		java = { "google-java-format -i" },
 		c = { "clang-format" },
+		cs = { "csharpier" },
 		cpp = { "clang-format" },
 		json = { "clang-format" },
 		zig = { "zigfmt" },

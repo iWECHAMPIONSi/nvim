@@ -7,8 +7,11 @@ require("nvim-treesitter").setup({
 		"python",
 		"c",
 		"cpp",
+		"c_sharp",
 		"java",
 		"zig",
+		"markdown",
+		"markdown_inline",
 	},
 	highlight = {
 		enable = true,
@@ -19,10 +22,42 @@ require("nvim-treesitter").setup({
 	},
 })
 
-require("nvim-treesitter").install({ "lua", "java", "luau", "python", "c", "cpp", "zig" })
+require("nvim-treesitter").install({
+	"lua",
+	"java",
+	"luau",
+	"python",
+	"c",
+	"cpp",
+	"c_sharp",
+	"zig",
+	"markdown",
+	"markdown_inline",
+})
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "c" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "cs" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "md" },
 	callback = function()
 		vim.treesitter.start()
 	end,

@@ -6,6 +6,19 @@ vim.keymap.set("v", "<leader>cps", function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 	return '"+y<C-v>'
 end, { expr = true })
+-- vim.keymap.set("i", "<CR>", function()
+-- return require("config.smart_blocks").cr()
+-- end, {
+-- expr = true,
+-- desc = "Insert context-aware block closer",
+-- })
+
+vim.keymap.set("i", "<CR>", function()
+	return require("iwechampionsi.auto_close").enter()
+end, {
+	expr = true,
+	desc = "Context-aware structural newline",
+})
 
 vim.keymap.set("i", "<C-CR>", function()
 	if vim.fn.pumvisible() == 1 then
@@ -39,11 +52,6 @@ end, { expr = true })
 -- "	* @note : na",
 -- "	*****************************************************/",
 -- }
-
--- vim.api.nvim_put(lines, "l", true, true)
--- end, {
--- desc = "Insert documentation comment",
--- })
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
