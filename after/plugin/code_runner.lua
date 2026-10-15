@@ -3,5 +3,6 @@ require("code_runner").setup({
 		python = "python3 -u",
 		typescript = "deno run",
 		c = "cd $dir && gcc $fileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt",
+		lua = "lua",
 	},
 })

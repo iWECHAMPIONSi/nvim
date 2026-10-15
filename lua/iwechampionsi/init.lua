@@ -1,6 +1,6 @@
 require("iwechampionsi.remap")
 -- require("iwechampionsi.roslyn_ls_lsp")
-require("iwechampionsi.code_terraform_config")
+-- require("iwechampionsi.code_terraform_config")
 require("iwechampionsi.lsp")
 require("iwechampionsi.lazy")
 require("iwechampionsi.settings")
